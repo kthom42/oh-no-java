@@ -17,6 +17,10 @@ var uppperCase("Would you like uppercase letters in your password")
 var numers("Would you like numbers to be included in your password")
 var specialCharacters("Would you like special characters to be included in your password")
 
+var minimumNumbers = "";
+  var minimumLowerCases = "";
+  var minimumUpperCases = "";
+  var minimumSpecialCharacters = "";
 
 
 
@@ -41,3 +45,50 @@ getRandomSpecialCharacters: function() {
   const specialCharacters = "!@#$%^&*()[]{}=+/.";
 return specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
 };
+
+
+if (numbers === true) {
+  minimumNumbers = functionArray.getNumbers();
+  minimumCount++;
+
+}
+
+if (lowerCases === true) {
+  minimumLowerCases = functionArray.getLowerCases();
+  minimumCount++;
+
+}
+
+if (upperCases === true) {
+  minimumUpperCases = functionArray.getUpperCases();
+  minimumCount++;
+
+}
+
+if (special === true) {
+  minimumSpecialCharacters = functionArray.getSpecialCharacters();
+  minimumCount++;
+
+}
+
+// empty string variable for the for loop below
+var randomPasswordGenerated = "";
+
+// loop getting random characters
+for (let i = 0; i < (parseInt(passwordLength) - minimumCount); i++) {
+  var randomNumberPicked = Math.floor(Math.random() * 4);
+
+  randomPasswordGenerated += randomNumberPicked;
+
+}
+
+// to make sure characters are added to the password
+randomPasswordGenerated += minimumNumbers;
+randomPasswordGenerated += minimumLowerCases;
+randomPasswordGenerated += minimumUpperCases;
+randomPasswordGenerated += minimumSpecialCharacters;
+
+
+return randomPasswordGenerated;
+
+}
