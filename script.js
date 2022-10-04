@@ -1,6 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-const specialCharacters = "!@#$%^&*()";
 
 // Write password to the #password input
 function writePassword() {
@@ -25,3 +24,20 @@ var specialCharacters("Would you like special characters to be included in your 
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+getRandomLower: function() {
+  return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
+}
+
+getRandomupper: function() {
+  return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
+}
+
+getRandomNumber: function() {
+  return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
+}
+
+getRandomSpecialCharacters: function() {
+  const specialCharacters = "!@#$%^&*()[]{}=+/.";
+return specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
+};
