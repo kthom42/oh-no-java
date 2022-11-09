@@ -45,15 +45,13 @@ function generatePassword() {
     password += getRandomFunc()();
   }
   //check with regex
-  const regex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,32}$/;
+  var regex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,128}$/;
   if (!password.match(regex)) {
     password = generatePassword();
   }
   return password;
 }
-
-console.log(generatePassword());
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
